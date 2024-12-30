@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import telecash from './telecash.png';
 
 const InputField = () => {
     const [showToast, setShowToast] = useState(false);
@@ -13,12 +14,19 @@ const InputField = () => {
     return (
         <div className="container">
             <div className="card">
+                <div className="logo-container">
+                    <img
+                        src={telecash}
+                        alt="Company Logo"
+                        className="logo"
+                    />
+                </div>
                 <h2>Delete Wallet Request</h2>
                 <form onSubmit={clickHandler}>
                     <div className="input-group">
                         <input
                             type="text"
-                            placeholder="Enter your name"
+                            placeholder="Enter your wallet"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
@@ -54,6 +62,18 @@ const InputField = () => {
                     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                     width: 100%;
                     max-width: 400px;
+                }
+
+                .logo-container {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 1.5rem;
+                }
+
+                .logo {
+                    width: 200px;
+                    height: 200px;
+                    object-fit: contain;
                 }
 
                 h2 {
